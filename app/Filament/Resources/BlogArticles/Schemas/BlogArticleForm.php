@@ -78,6 +78,7 @@ class BlogArticleForm
                                     ->label('Thumbnail Image')
                                     ->directory('blog/thumbnails')
                                     ->image()
+                                    ->disk('public')
                                     ->maxSize(2048)
                                     ->imagePreviewHeight('150')
                                     ->columnSpanFull(),
@@ -86,6 +87,7 @@ class BlogArticleForm
                                     ->label('Main Image')
                                     ->directory('blog/images')
                                     ->image()
+                                    ->disk('public')
                                     ->maxSize(4096)
                                     ->imagePreviewHeight('200')
                                     ->columnSpanFull(),
