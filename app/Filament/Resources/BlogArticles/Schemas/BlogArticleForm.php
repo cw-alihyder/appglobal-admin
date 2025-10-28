@@ -47,6 +47,7 @@ class BlogArticleForm
                                 Textarea::make('excerpt')
                                     ->label('Excerpt')
                                     ->rows(3)
+                                    ->required()
                                     ->maxLength(500)
                                     ->columnSpanFull(),
 

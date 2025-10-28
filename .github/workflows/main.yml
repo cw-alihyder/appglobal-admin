@@ -34,7 +34,7 @@ jobs:
           script: |
             cd /var/www/admin_appsglobal
             composer install
-            sudo chown -R apache:apache storage bootstrap/cache
+            sudo chown -R www-data:www-data storage bootstrap/cache
             sudo chmod -R 775 storage bootstrap/cache
             php artisan storage:link
             php artisan config:cache
