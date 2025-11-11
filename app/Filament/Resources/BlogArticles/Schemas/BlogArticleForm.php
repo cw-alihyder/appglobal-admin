@@ -48,7 +48,7 @@ class BlogArticleForm
                                     ->label('Excerpt')
                                     ->rows(3)
                                     ->required()
-                                    ->maxLength(500)
+                                    ->maxLength(250)
                                     ->columnSpanFull(),
 
                                 RichEditor::make('content')
