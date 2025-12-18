@@ -9,15 +9,9 @@ class BlogArticle extends Model
 {
     use SoftDeletes;
 
-    protected $table = 'BlogArticle'; // Prisma default is PascalCase
+    protected $table = 'blog_articles'; // Prisma default is PascalCase
 
     protected $primaryKey = 'id';
-
-    public $timestamps = true;
-
-    const CREATED_AT = 'createdAt';
-    const UPDATED_AT = 'updatedAt';
-    const DELETED_AT = 'deletedAt';
 
     protected $fillable = [
         'id',

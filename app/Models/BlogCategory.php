@@ -8,17 +8,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class BlogCategory extends Model
 {
-    use SoftDeletes;
-
-    protected $table = 'BlogCategory'; // Prisma default is PascalCase
-
-    protected $primaryKey = 'id';
-
-    public $timestamps = true;
-
-    const CREATED_AT = 'createdAt';
-    const UPDATED_AT = 'updatedAt';
-    const DELETED_AT = 'deletedAt';
+    protected $table = 'blog_categories'; // Prisma default is PascalCase
 
 
     protected $fillable = [
