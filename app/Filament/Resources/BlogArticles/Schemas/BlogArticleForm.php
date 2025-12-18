@@ -12,6 +12,8 @@ use Illuminate\Support\Str;
 use Filament\Forms\Components\RichEditor;
 use Filament\Schemas\Components\Tabs;
 use Filament\Schemas\Components\Tabs\Tab;
+use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
+
 
 class BlogArticleForm
 {
@@ -75,25 +77,9 @@ class BlogArticleForm
                         Tab::make('Media')
                             ->icon('heroicon-o-photo')
                             ->schema([
-                                FileUpload::make('thumbnail')
-                                    ->label('Thumbnail Image')
-                                    ->directory('blog/thumbnails')
-                                    ->image()
-                                    ->required()
-                                    ->disk('public')
-                                    ->maxSize(2048)
-                                    ->imagePreviewHeight('150')
-                                    ->columnSpanFull(),
+                                SpatieMediaLibraryFileUpload::make('thumbnail')->label('Main Image')->required()->collection('thumbnail')->columnSpanFull()->disk('public'),
 
-                                FileUpload::make('image')
-                                    ->label('Main Image')
-                                    ->directory('blog/images')
-                                    ->image()
-                                    ->required()
-                                    ->disk('public')
-                                    ->maxSize(4096)
-                                    ->imagePreviewHeight('200')
-                                    ->columnSpanFull(),
+                                SpatieMediaLibraryFileUpload::make('image')->label('Main Image')->required()->collection('image')->columnSpanFull()->disk('public'),
                             ])
                             ->columns(1),
 
@@ -106,7 +92,7 @@ class BlogArticleForm
                                     ->required()
                                     ->columnSpanFull(),
 
-                                Select::make('categoryId')
+                                Select::make('category_id')
                                     ->label('Category')
                                     ->relationship('category', 'name')
                                     ->required()

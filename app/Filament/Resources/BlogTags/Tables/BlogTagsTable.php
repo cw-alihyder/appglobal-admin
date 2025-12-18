@@ -21,9 +21,7 @@ class BlogTagsTable
                 TextColumn::make('name')->sortable()->searchable(),
                 TextColumn::make('createdAt')->label('Created At')->dateTime(),
             ])
-            ->filters([
-                TrashedFilter::make(),
-            ])
+            ->filters([])
             ->recordActions([
                 EditAction::make(),
             ])

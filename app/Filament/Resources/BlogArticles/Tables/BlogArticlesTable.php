@@ -55,7 +55,7 @@ class BlogArticlesTable
         ])
 
         ->filters([
-            SelectFilter::make('categoryId')
+            SelectFilter::make('category_id')
                 ->label('Category')
                 ->relationship('category', 'name'),
 

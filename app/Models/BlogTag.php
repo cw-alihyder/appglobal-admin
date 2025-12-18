@@ -3,22 +3,11 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\SoftDeletes;
 
 
 class BlogTag extends Model
 {
-    use SoftDeletes;
-
-    protected $table = 'BlogTag'; // Prisma default is PascalCase
-
-    protected $primaryKey = 'id';
-
-    public $timestamps = true;
-
-    const CREATED_AT = 'createdAt';
-    const UPDATED_AT = 'updatedAt';
-    const DELETED_AT = 'deletedAt';
+    protected $table = 'blog_tags'; // Prisma default is PascalCase
 
      protected $fillable = [
         'id',
@@ -27,6 +16,6 @@ class BlogTag extends Model
 
     public function articles()
     {
-        return $this->belongsToMany(BlogArticle::class, 'BlogArticleTag', 'tagId', 'articleId');
+        return $this->belongsToMany(BlogArticle::class, 'blog_article_tags', 'tag_id', 'article_id');
     }
 }

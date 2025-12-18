@@ -18,9 +18,7 @@ return new class extends Migration
             $table->string('excerpt');
             $table->string('slug')->unique();
 
-            $table->string('thumbnail');
             $table->longText('content');
-            $table->string('image');
 
             $table->dateTime('date');
 
