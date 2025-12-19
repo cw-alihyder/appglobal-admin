@@ -28,9 +28,10 @@ class BlogArticle extends Model implements HasMedia
         'content',
         'image',
         'date',
-        'createdAt',
-        'updatedAt',
         'category_id',
+        'meta_title',
+        'meta_description',
+        'meta_keywords'
     ];
 
 
