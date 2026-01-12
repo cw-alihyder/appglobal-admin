@@ -46,7 +46,7 @@ class BlogArticleForm
                                     ->maxLength(250)
                                     ->columnSpanFull(),
 
-                                CKEditor::make('description')->dehydrateStateUsing(function ($state) {
+                                CKEditor::make('content')->dehydrateStateUsing(function ($state) {
                                     if (empty($state)) {
                                         return $state;
                                     }
