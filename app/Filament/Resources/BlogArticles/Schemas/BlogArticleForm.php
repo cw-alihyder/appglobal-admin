@@ -82,7 +82,7 @@ class BlogArticleForm
                             ->schema([
                                                                 SpatieMediaLibraryFileUpload::make('thumbnail')->label('Main Image')->required()->collection('thumbnail')->columnSpanFull()->disk('public'),
 
-                                                                SpatieMediaLibraryFileUpload::make('image')->label('Main Image')->required()->collection('image')->columnSpanFull()->disk('public'),
+                                                                SpatieMediaLibraryFileUpload::make('image')->label('Main Image')->required()->withCustomProperties([ 'alt' => ''])->collection('image')->disk('public')->columnSpanFull(),
                                                             ])
                             ->columns(1),
 

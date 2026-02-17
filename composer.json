@@ -8,11 +8,13 @@
     "require": {
         "php": "^8.2",
         "doctrine/dbal": "^4.4",
-        "kahusoftware/filament-ckeditor-field": "2.x-dev",
         "filament/filament": "^4.1",
         "filament/spatie-laravel-media-library-plugin": "^4.1",
+        "kahusoftware/filament-ckeditor-field": "2.x-dev",
         "laravel/framework": "^12.0",
-        "laravel/tinker": "^2.10.1"
+        "laravel/tinker": "^2.10.1",
+        "openai-php/client": "^0.19.0",
+        "orhanerday/open-ai": "^5.3"
     },
     "require-dev": {
         "fakerphp/faker": "^1.23",
