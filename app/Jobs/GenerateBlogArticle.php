@@ -103,13 +103,13 @@ class GenerateBlogArticle implements ShouldQueue
             if ($imageUrl) {
                 // Using Spatie's built-in URL handler avoids manual downloads and temp files
                 $article->addMediaFromUrl($imageUrl)
-                    ->usingFileName($slug . '.png')
+                    ->usingFileName($slug . '.jpg')
                     ->withCustomProperties(['alt' => $title])
                     ->toMediaCollection('image', 'public');
 
                 // If you need a separate collection for thumbnails:
                 $article->addMediaFromUrl($imageUrl)
-                    ->usingFileName($slug . '-thumb.png')
+                    ->usingFileName($slug . '-thumb.jpg')
                     ->toMediaCollection('thumbnail', 'public');
             }
 

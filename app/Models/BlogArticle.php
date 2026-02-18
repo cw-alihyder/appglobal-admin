@@ -34,6 +34,29 @@ class BlogArticle extends Model implements HasMedia
         'meta_keywords'
     ];
 
+    public function registerMediaConversions(Media $media = null): void
+    {
+        $this
+            ->addMediaConversion('webp')
+            ->format('webp')
+            ->quality(80)
+            ->nonQueued();
+
+        $this
+            ->addMediaConversion('thumb')
+            ->fit(Fit::Crop, 400, 300)
+            ->format('webp')
+            ->quality(75)
+            ->nonQueued();
+
+        $this
+            ->addMediaConversion('medium')
+            ->fit(Fit::Max, 800, 600)
+            ->format('webp')
+            ->quality(80)
+            ->nonQueued();
+    }
+
 
 
     public function category()
