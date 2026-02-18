@@ -34,26 +34,20 @@ class BlogArticle extends Model implements HasMedia
         'meta_keywords'
     ];
 
-    public function registerMediaConversions(Media $media = null): void
+public function registerMediaConversions(Media $media = null): void
     {
-        $this
-            ->addMediaConversion('webp')
+        // Conversion 1: Standard Optimized WebP
+        $this->addMediaConversion('optimized')
             ->format('webp')
             ->quality(80)
+            ->withResponsiveImages() // Generates multiple sizes for SEO
             ->nonQueued();
 
-        $this
-            ->addMediaConversion('thumb')
+        // Conversion 2: Thumbnail
+        $this->addMediaConversion('thumb')
             ->fit(Fit::Crop, 400, 300)
             ->format('webp')
             ->quality(75)
-            ->nonQueued();
-
-        $this
-            ->addMediaConversion('medium')
-            ->fit(Fit::Max, 800, 600)
-            ->format('webp')
-            ->quality(80)
             ->nonQueued();
     }
 
