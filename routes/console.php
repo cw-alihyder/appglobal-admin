@@ -8,6 +8,3 @@ Artisan::command('inspire', function () {
 })->purpose('Display an inspiring quote');
 
 
-for ($i = 0; $i < 5; $i++) {
-    Schedule::command('blog:generate')->dailyAt('15:00');
-}
